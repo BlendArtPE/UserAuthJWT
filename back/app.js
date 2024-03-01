@@ -4,7 +4,7 @@ const app = express()
 const port = process.env.PORT
 
 app.get('/', (req, res) => {
-    
+    res.json({message: "Estoy corriendo un nuevo servidor"})
 })
 
 app.listen(port, (req, res) => {
