@@ -1,24 +1,16 @@
-import User from '/user.svg'
+
 import './App.css'
+import Register from './components/Register'
+import Login from './components/Login'
+import Profile from './components/Profile'
 
 function App() {
 
   return (
     <>
-      <div className='new-card'>
-        <div className="image">
-          <img src={User} style={{scale: '200%'}} alt="" />
-        </div>
-        <div className="forms">
-          <label htmlFor="">Email address</label>
-          <input type="email" name='email' />
-          <label htmlFor="">Password</label>
-          <input type="password" name="password" id="" />
-        </div>
-        <div className="options">
-          <button className='b1'>Send</button>
-          <button className='b2'>Register</button>
-        </div>
+      <div className="card-group">
+        <Register />
+        <Login />
       </div>
     </>
   )
