@@ -8,7 +8,7 @@ const Register = () => {
     password: "",
   });
 
-  const route = "http://localhost:3000/user/register";
+  const route = "https://userauthjwt.onrender.com/user/register";
 
   const handleRegister = async () => {
     try {
