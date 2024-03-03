@@ -33,10 +33,10 @@ const Register = () => {
   return (
     <div className="new-card">
       <div className="image">
-        <img src={User} style={{ scale: "200%" }} alt="" />
+        <img className="logo" src={User}  alt="" />
+        <h2>Register</h2>
       </div>
       <div className="forms">
-        <h2>Register</h2>
         <label>Name</label>
         <input type="text" name="name" value={user.name} onChange={(e) => setUser({...user, name:e.target.value})}/>
         <label>Email address</label>
@@ -45,7 +45,7 @@ const Register = () => {
         <input type="password" name="password" value={user.password} onChange={(e) => setUser({...user, password: e.target.value})} />
       </div>
       <div className="options">
-        <button className="register" onClick={handleRegister}>Register</button>
+        <button className="option-btn" onClick={handleRegister}>Register</button>
       </div>
     </div>
   );

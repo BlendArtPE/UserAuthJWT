@@ -8,12 +8,12 @@ const Navigation = () => {
     }
 
   return (
-    <nav>
-      <ul>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/sign">Sign</Link></li>
-        <li><Link to="/profile">Profile</Link></li>
-        <li><button onClick={cleanToken}>Salir</button></li>
+    <nav className="navbar">
+      <ul className="nav-list">
+        <li className="nav-item"><Link to="/">Home</Link></li>
+        <li className="nav-item"><Link to="/sign">Sign</Link></li>
+        <li className="nav-item"><Link to="/profile">Profile</Link></li>
+        <li className="nav-item"><button onClick={cleanToken}>Delete Token</button></li>
       </ul>
     </nav>
   )

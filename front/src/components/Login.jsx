@@ -38,17 +38,17 @@ const Login = () => {
   return (
     <div className="new-card">
       <div className="image">
-        <img src={User} style={{ scale: "200%" }} alt="" />
+        <img className="logo" src={User}  alt="" />
+        <h2>Login</h2>
       </div>
       <div className="forms">
-        <h2>Login</h2>
         <label>Email address</label>
         <input type="email" name="email" value={user.email} onChange={(e) => setUser({...user, email: e.target.value})}/>
         <label>Password</label>
         <input type="password" name="password" value={user.password} onChange={(e) => setUser({...user, password: e.target.value})} />
       </div>
       <div className="options">
-        <button className="login" onClick={handleLogin}>Send</button>
+        <button className="option-btn" onClick={handleLogin}>Send</button>
       </div>
     </div>
   );

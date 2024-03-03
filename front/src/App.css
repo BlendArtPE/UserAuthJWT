@@ -1,56 +1,46 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+body {
+  margin: 0px;
+  color: white;
 }
 
 .card {
   padding: 2em;
 }
 
-.read-the-docs {
-  color: #888;
-}
 
 .card-group {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1rem;
+  padding-top: 2rem;
 }
 
 .new-card {
-  border: 2px white solid;
+  /* border: 2px white solid; */
   border-radius: 1rem;
   padding: 2rem;
+  width: 200px;
+  background-color: #342A45;
+}
+
+.image {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  height: 100px;
+  fill: white;
+}
+
+input {
+  margin: 10px 0px;
+  background-color: #241B35;
+  border-radius: 5px;
 }
 
 .forms {
@@ -63,16 +53,82 @@
   margin-top: 1rem;
   background-color: darkcyan;
 }
-.register {
-  margin-top: 1rem;
-  background-color: darkorange;
-}
-.logout {
-  margin-top: 1rem;
-  background-color: crimson;
+
+.options {
+  display: flex;
+  justify-content: center;
 }
 
-nav {
+.option-btn {
+  margin-top: 1rem;
+  background-color: #A364FF;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.option-btn:hover {
+  background-color: #6C35DE;
+}
+
+.navbar {
+  background-color: #333; /* Cambia esto según tu preferencia */
+}
+
+.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
   display: flex;
-  flex-direction: row;
+  justify-content: space-evenly;
+  background-color: #342A45;
+  font-weight: 600;
+}
+
+.nav-item {
+  padding: 10px 20px;
+}
+
+.nav-item:hover {
+  background-color: #6C35DE;
+}
+
+a {
+  text-decoration: none;
+  color: white; /* Cambia esto según tu preferencia */
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white; /* Cambia esto según tu preferencia */
+}
+
+button:hover {
+  text-decoration: underline;
+}
+
+.home {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding: 10px;
+}
+.empty {
+  height: 200px;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.profile-t {
+  width: 300px;
 }
