@@ -1,16 +1,21 @@
 
 import './App.css'
-import Register from './components/Register'
-import Login from './components/Login'
+import { Routes, Route } from 'react-router-dom';
+import Sign from './components/Sign'
+import Profile from './components/Profile'
+import Home from './components/Home'
+import Navigation from './Navigation';
 
 function App() {
 
   return (
     <>
-      <div className="card-group">
-        <Register />
-        <Login />
-      </div>
+    <Navigation />
+    <Routes>
+        <Route path="/" element={<Home />}/>
+        <Route path="/sign" element={<Sign />}/>
+        <Route path="/profile" element={<Profile />}/>
+    </Routes>
     </>
   )
 }

@@ -6,18 +6,21 @@ require('dotenv').config()
 const app = express()
 const port = process.env.PORT
 const uri = process.env.URL_MONGO
+const { generateAccessToken, validateToken } = require('./functions.js');
 const User = require('./db/User.js')
 
-app.use(cors())
+const corsOptions = {
+    origin: '*', // O bien, especifica los dominios permitidos ['http://dominio1.com', 'http://dominio2.com']
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true,
+    exposedHeaders: 'authorization', // Permitir que el cliente acceda al encabezado 'authorization'
+};
+
+app.use(cors(corsOptions))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
 
 mongoose.connect(uri, {dbName: 'userJWT'})
-// const db = mongoose.connection
-// db.on('error', console.error.bind(console, 'Error de conexión a MongoDB'))
-// db.once('open', () => {
-//     console.log('Conexión exitosa a MongoDB Atlas')
-// })
 
 const userTest = new User({
     name: "Alex Sevillano",
@@ -40,10 +43,23 @@ app.post('/user/login', async (req, res) => {
     const userFind = await User.findOne({email: email, password:password})
     
     if (userFind) {
-        console.log(userFind)
-        res.json(userFind)
+        const accessToken = generateAccessToken(userFind)
+        res.header('authorization', accessToken).json({
+            message: 'Usuario atenticado',
+            token: accessToken
+        })
     } else {
         res.status(404).json({error: 'Usuario no encontrado'})
+    }
+})
+
+app.get('/user/profile', validateToken, async (req, res) => {
+    try {
+        const userInformation = await User.findById(req.user.id)
+        console.log(userInformation)
+        res.json(userInformation)  
+    } catch (error) {
+        console.error("Error de verificación: " + error)
     }
 })
 

@@ -3,12 +3,15 @@ import User from '/user.svg'
 
 const Login = () => {
 
+    const routeLocal = "http://localhost:3000"
+    const routeInter = "https://userauthjwt.onrender.com"
+
     const [user, setUser] = useState({
         email: "",
         password: "",
       });
     
-    const route = "https://userauthjwt.onrender.com/user/login";
+    const route = routeLocal + "/user/login";
 
     const handleLogin = async () => {
         try {
@@ -19,14 +22,12 @@ const Login = () => {
             },
             body: JSON.stringify(user),
           });
-          console.log(response)
     
           if (response.ok) {
             console.log("Usuario encontrado");
-            const data = await response.json()
-            console.log(data)
-            alert('Eres ' + data.name)
-          } else {
+            const accessToken = response.headers.get('authorization')
+            console.log('Tokens de Acceso:', accessToken)
+            localStorage.setItem('accessToken', accessToken)
             alert('Cuenta errónea')
             console.error("Error al buscar usuario");
           }
