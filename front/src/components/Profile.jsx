@@ -41,7 +41,7 @@ const Profile = () => {
       <div className="profile-t">
       <h2>Hello! If you want to see a response, press the button. If you don't see that text changed, then you need to logging.</h2>
       <button className="option-btn" onClick={getUser}><h2>Request</h2></button>
-      {showData ? <h2>Hay contenido, el autor es {dataUser.name}</h2> : <h2>Empty...</h2>}
+      {showData ? <h2>Your name is {dataUser.name}</h2> : <h2>Empty...</h2>}
       </div>
     </div>
   );
