@@ -33,7 +33,7 @@ const Register = () => {
   return (
     <div className="new-card">
       <div className="image">
-        <img className="logo" src={User}  alt="" />
+        <img className="logo" src="/profile.svg"  alt="" />
         <h2>Register</h2>
       </div>
       <div className="forms">

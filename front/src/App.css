@@ -34,14 +34,21 @@ body {
 
 .logo {
   height: 100px;
-  fill: white;
+  background-color: #ffc7ff;
+  border-radius: 100%;
 }
 
 input {
-  margin: 10px 0px;
+  margin: 10px 0;
   background-color: #241B35;
-  border-radius: 5px;
+  border: none; /* Elimina el borde predeterminado del input */
+  border-radius: 20px; /* Hace que los bordes sean redondeados, ajusta según tu preferencia */
+  padding: 10px; /* Añade un relleno para dar espacio al texto dentro del input */
+  color: white; /* Cambia el color del texto según tu preferencia */
+  outline: none; /* Elimina el contorno predeterminado al hacer clic */
+  box-shadow: 0 0 0 2px #241B35; /* Añade una sombra para resaltar el input, ajusta según tu preferencia */
 }
+
 
 .forms {
   display: flex;
