@@ -28,8 +28,7 @@ const Login = () => {
             const accessToken = response.headers.get('authorization')
             console.log('Tokens de Acceso:', accessToken)
             localStorage.setItem('accessToken', accessToken)
-            alert('Cuenta errónea')
-            console.error("Error al buscar usuario");
+            alert('Sesión iniciada')
           }
         } catch (error) {
           console.error("Error al enviar datos de usuario: ", error);
