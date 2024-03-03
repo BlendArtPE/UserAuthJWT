@@ -6,7 +6,7 @@ const Profile = () => {
   const getUser = async () => {
     const routeLocal = "http://localhost:3000";
     const routeInter = "https://userauthjwt.onrender.com";
-    const route = routeLocal + "/user/profile";
+    const route = routeInter + "/user/profile";
     const token = localStorage.getItem("accessToken");
 
     try {

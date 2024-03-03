@@ -11,7 +11,7 @@ const Login = () => {
         password: "",
       });
     
-    const route = routeLocal + "/user/login";
+    const route = routeInter + "/user/login";
 
     const handleLogin = async () => {
         try {
